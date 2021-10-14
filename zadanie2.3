@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int del(int a) {
+	int b = 1;
+	int s = 0;
+	int c = (a / 2);
+	while (b <= c){
+		if (a % b == 0){
+			s += b;
+		}
+		b++;
+	}
+	return s;
+}
+int main() {
+	for (int k1 = 1; k1 <= 10000; k1++){
+		for (int k2 = k1; k2 <= k1 + 1000; k2++){
+			if (k1 != k2 && del(k2) == k1 && del(k1) == k2 && k1 < k2) {
+				cout << k1 << "  " << k2;
+			}
+		}
+	}
+}
